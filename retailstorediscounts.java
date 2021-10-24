@@ -1,0 +1,80 @@
+package corejava;
+import java.util.Scanner;
+public class retailstorediscounts 
+{
+	public static void main(String[] args) 
+	{
+		@SuppressWarnings("resource")
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter your name: ");
+	    String name=scan.nextLine();
+	    System.out.println("Hii "+name+","+ " choose your category : ");
+	    System.out.println("1.Employee of the store\n2.Affliate of the store\n3.Customer");
+	    int n=scan.nextInt();
+	    switch(n)
+	    {
+	    case 1:
+		System.out.println("Enter your bill: ");
+		float bill_e=scan.nextFloat();
+		double bill1_e=bill_e-(bill_e*0.3);
+		if(bill1_e>100)
+		{
+		 double bill2_e=Math.floor((bill1_e/100))*5;
+		 System.out.println(name+" Your bill is "+(bill1_e-bill2_e));
+		}
+		else
+		{
+		 System.out.println(name+" Your bill is "+bill1_e);
+		}
+		 break;
+		 case 2:
+		 System.out.println("Enter your bill: ");
+		 float bill_a=scan.nextFloat();
+		 double bill1_a=bill_a-(bill_a*0.1);
+		 if(bill1_a>100)
+		{
+		 double bill2_a=Math.floor((bill1_a)/100)*5;
+		 System.out.println(name+" Your bill is "+(bill1_a-bill2_a));
+		}
+		 else
+		{
+		 System.out.println(name+" Your bill is "+bill1_a);
+		}
+		 break;
+		 case 3:
+		 System.out.println("Are you a customer over 2 years:\n1.Yes \n2.No");
+		 int v=scan.nextInt();
+		 if(v==1)
+		{
+		 System.out.println("Enter your bill : ");
+		 float bill_c=scan.nextFloat();
+		 double bill1_c=(bill_c*0.95);
+		 if(bill1_c>100)
+		{
+	    	double bill2_c=Math.floor(bill1_c/100)*5;
+	    	System.out.println(name+"," + " You get a discount for being a valuable customer for over 2 years "+(bill1_c-bill2_c));
+	    	}
+			 else
+			{
+		    	System.out.println(name+","+ " You get a discount for being a valuable customer for over 2 years "+bill1_c);
+			}
+		}	
+		 if(v==2)
+			 {
+			  System.out.println("Enter your bill : ");
+			  float bill=scan.nextFloat();
+			  if(bill>100)
+				  {
+				 double bill1=Math.floor(bill/100)*5;
+				 System.out.println(name+"," + " Your bill is "+(bill-bill1));
+				 }
+				  else
+				{
+					  System.out.println(name+"," +" your bill is "+bill);
+					  break;
+							
+				}
+			 }
+	    }
+	}
+}
